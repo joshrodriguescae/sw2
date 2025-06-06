@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-bt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+<body>
+    <h2>Formulário de Cadastro</h2>
+
+    <form onsubmit="return validarCadastro()">
+      <label for="nome">Nome Completo:</label><br />
+      <input type="text" id="nome" name="nome" required /><br /><br />
+  
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" required /><br /><br />
+  
+      <label for="telefone">Telefone:</label><br />
+      <input type="tel" id="telefone" name="telefone" pattern="[0-9\s\-\+\(\)]{8,15}" placeholder="(xx) xxxx-xxxx" required /><br /><br />
+  
+      <label for="cpf">CPF:</label><br />
+      <input type="text" id="cpf" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="000.000.000-00" required /><br /><br />
+  
+      <label for="senha">Senha:</label><br />
+      <input type="password" id="senha" name="senha" required /><br /><br />
+  
+      <label for="redefinirSenha">Redefinir Senha:</label><br />
+      <input type="password" id="redefinirSenha" name="redefinirSenha" required /><br /><br />
+  
+      <button type="submit">Cadastrar</button>
+    </form>
+  
+    <p id="msgErro" style="color:red;"></p>
+  
+    <script>
+      function validarCadastro() {
+        const senha = document.getElementById("senha").value;
+        const redefinirSenha = document.getElementById("redefinirSenha").value;
+        const msgErro = document.getElementById("msgErro");
+  
+        if (senha !== redefinirSenha) {
+          msgErro.textContent = "As senhas não coincidem.";
+          return false; // impede o envio do form
+        }
+  
+        msgErro.textContent = "";
+        alert("Cadastro realizado com sucesso!");
+        return true; // permite o envio do form
+      }
+    </script>
+</body>
+</html>
