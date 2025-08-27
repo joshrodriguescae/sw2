@@ -33,14 +33,43 @@ body {
         transform: scale(1.02);
     }
     .imagem-produto {
-        width: 100%;
-        height: 150%;
+        width: 250px;
+        height: 250px;
         background-color: rgb(150, 62, 62);
         border-radius: 4px;
         margin-bottom: 15px;
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    .imagem-produto img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .descricao {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .preco {
+        font-weight: bold;
+        color: firebrick;
+    }
+
+    .botao-carrinho {
+        background-color: azure;
+        color: brown;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .botao-carrinho:hover {
+        background-color: slategrey;
     }
 
    
